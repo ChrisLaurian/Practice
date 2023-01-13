@@ -38,10 +38,46 @@
                   </div>
                 </div>
               </nav>
-              <div class="p-5 bg-primary text-white text-center grad">
-                <h1>Lorem ipsum dolor.</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corrupti vitae excepturi sapiente, accusamus expedita illum architecto ut et eaque adipisci hic alias dolorum, culpa atque laborum! Quisquam, vitae quis.!</p> 
-                <button type="button" class="btn btn-light" ><a href="blog.html">Ir al Blog</a></button>
+              
+              <div class="container-fluid">
+                <h1>Formulario de registro</h1>
+                <form>
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Apellido" name="Apellido">
+                      </div>
+                      <div class="container">
+                        <label for="comment">Biografia:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+
+                        <div class="row">
+                            <div class="col">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Hombre 
+                                <label class="form-check-label" for="radio1"></label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Mujer
+                                <label class="form-check-label" for="radio2"></label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-check">
+                                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Otro
+                                <label class="form-check-label" for="radio2"></label>
+                              </div>
+                            </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                  </form>
               </div>
 
               
