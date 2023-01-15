@@ -9,6 +9,7 @@ const json = require('body-parser/lib/types/json');
 var app = express();
 
 //Cargar ficheros rutas
+var article_router = require('./routes/article');
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
@@ -16,17 +17,11 @@ app.use(express.json());
 
 //CORS
 
-//Añadir prefijos a rutas
+//Añadir prefijos a rutas /cargar ruta
+app.use('/', article_router);
 
 //Ruta o metodo de prueba para el API
-app.get('/datos', (req, res) => {
-    
-    return res.status(200).send({
-        curso: 'Master en frameworks',
-        autor: 'Victor robles'
 
-    });
-});
 
 //Exportar modulo(fichero actual)
 module.exports = app;
