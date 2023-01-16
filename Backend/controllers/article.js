@@ -294,7 +294,7 @@ var controller = {
                 mesagge: 'ninguna image con este nombre'
             });
         }
-    }
+    } 
 
 }; //end controllador
 
