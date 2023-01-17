@@ -294,7 +294,43 @@ var controller = {
                 mesagge: 'ninguna image con este nombre'
             });
         }
-    } 
+    },
+
+    //Metodo buscar
+    search: (req, res) =>{
+
+        //Sacar el string a buscar
+        var searchString = req.params.search;
+
+        //Find or
+        Article.find({"$or": [
+            { "title": { "$regex": searchString, "$options": "i"}},
+            { "content": { "$regex": searchString, "$options": "i"}}
+
+            ]})
+            .sort([['date', 'descending']])
+            .exec((err, articles) =>{
+
+                if(err){
+                    return res.status(500).send({
+                        status: 'error',
+                        mesagge: 'Error en la petición'
+                    });
+                }
+
+                if(!articles || articles.length <= 0){
+                    return res.status(404).send({
+                        status: 'error',
+                        mesagge: 'No hay articulos que coincidan con tu busqueda'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    articles
+                });
+            });
+    }
 
 }; //end controllador
 
